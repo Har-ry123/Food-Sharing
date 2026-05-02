@@ -1,0 +1,31 @@
+<% layout('layout') %>
+<h1>Welcome to SharePlate</h1>
+<p>Connect with your neighbors, reduce food waste, and help those in need.</p>
+
+<section>
+  <h2>Community Stats</h2>
+  <ul>
+    <li><strong>Users:</strong> <%= stats.totalUsers %></li>
+    <li><strong>Donations:</strong> <%= stats.totalDonations %></li>
+    <li><strong>Available Items:</strong> <%= stats.activeItems %></li>
+    <li><strong>Total Shared:</strong> <%= stats.totalFoodItems %></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Available Food Items</h2>
+  <% if (foodItems.length === 0) { %>
+    <p>No food items available. Be the first to share!</p>
+  <% } else { %>
+    <ul>
+      <% foodItems.forEach(item => { %>
+        <li style="margin-bottom:1rem;">
+          <strong><%= item.title %></strong> - <%= item.description %> <br>
+          <em>Location:</em> <%= item.location %> | <em>Quantity:</em> <%= item.quantity %> | <em>Expires:</em> <%= item.expiryDate %>
+          <br>
+          <a href="/food/<%= item.id %>">View</a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>

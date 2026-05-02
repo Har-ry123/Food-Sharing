@@ -1,0 +1,37 @@
+{
+  "name": "shareplate-fullstack",
+  "version": "1.0.0",
+  "description": "Community Food Sharing Platform - A social beneficial full-stack project",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd vite-project && npm run dev",
+    "build": "cd vite-project && npm run build",
+    "install-all": "npm install && cd vite-project && npm install"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "food-sharing",
+    "community",
+    "social-impact",
+    "fullstack"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
